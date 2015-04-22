@@ -5,64 +5,160 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cuberis Standards</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|PT+Mono' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/standards/assets/css/app.css">
   </head>
   <body class="page-pages">
     <header class="main-header">
 
     </header>
-    <div class="container">
-      <div class="row">
-        <aside class="col-sm-4">
-          <h3>Table of Contents</h3>
-          <ul>
-            <li>
-              <a href="/">Home</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/deployment">Deployment</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/css">CSS</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/html">HTML</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/git">GIT</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/js">Javascript</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/tooling">Tooling</a>
-            </li>
-          
-            <li>
-              <a href="/standards/pages/setup">Project Setup</a>
-            </li>
-          
-
-        </aside>
-        <main class="col-sm-8">
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <aside class="col-sm-4 col left-col">
+          <nav class="bar-nav">
+            <h3 class="site-title">Standards &amp; Practices</h3>
+            <ul>
+              <li>
+                <a href="/standards/">Home</a>
+              </li>
           
             
-  <a href="#issues">Issues</a>
-
+              <li>
+                <a href="/standards/pages/setup">Project Setup</a>
+              </li>
+            
+          
+            
+              <li class="active">
+                <a href="/standards/pages/git">GIT and GitHub</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/standards/pages/css">CSS</a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/standards/pages/js">Javascript</a>
+              </li>
+            
+          
+            </ul>
+          </nav>
+        </aside>
+        <main class="col-sm-8 col-sm-offset-4 col right-col">
+          
+            
 
           
 
           
-            <h1>GIT</h1>
+            <h1>GIT and GitHub</h1>
           
 
-          
+          <p>Code for Greensboro uses GIT for version control and GitHub for a number of development task. GitHub remote repositories, project development documentation, project issues and development specific discussion. The goal is to keep documentation and discussion in context and project a central location for all information related to development projects. Additionally, deployment of most projects is tied to the Master branch in GitHub in conjunction with DeployHQ.</p>
+<p>For a general introduction to GIT Code for Greensboro has a Codeschool account with excellent video training. That login is available via LastPass.</p>
+<p>Basic online walk through and introduction to GIT and GitHub</p>
+<p><a href="https://try.github.io/levels/1/challenges/1">https://try.github.io/levels/1/challenges/1</a></p>
+<p>Cheat Sheet of Git Commands</p>
+<p><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf</a></p>
+<p>The following provides a High Level over of the most common operations and Code for Greensboro standard practices. Additionally, you can use once of server GUI applications including GitHub for Mac/Windows or SourceTree</p>
+<h3>Introduction to Basic Methods</h3><p>The most common methods required for GIT are:</p>
+<ul>
+<li><code>git init</code></li>
+<li><code>git status</code></li>
+<li><code>git branch &lt;branch name&gt;</code></li>
+<li><code>git checkout &lt;branch name&gt;</code></li>
+<li><code>git add -A</code></li>
+<li><code>git commit -a</code></li>
+<li><code>git push / git push -u origin &lt;branch name&gt;</code></li>
+</ul>
+<h4>git init</h4><p>Initializes a GIT repository so that you can begin tracking files.</p>
+<p>Example Response:</p>
+<pre>
+Initialized empty Git repository in /Users/name/codeforgso/example-project/.git/
+</pre>
+
+<h4>git status</h4><p>Provides current status, providing details of current branch, Files untracked, changed and deleted.</p>
+<pre>
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+    index.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+</file></pre>
+
+<h4>git branch &lt;branch name&gt;</h4><p>This command is used to create a new branch off of your current branch</p>
+<h4>git checkout &lt;branch name&gt;</h4><p>Swaps your current branch</p>
+<h4>git add -A / git add path/to/file</h4><p>Add files to be tracked in a GIT project. Tracked files will be pushed to GitHub and have a history from the time that they are added forward.</p>
+<h4>git commit -a</h4><p>A commit represents a point in the files history that can be referenced. Commits should be main frequently in order to provide adequate references to changes and progress. Commits should take place whenever new functionality is working, or if a developer is breaking from the work for any reason. Commits that take place mid work should be marked as such.</p>
+<h4>git push / git push -u origin &lt;branch name&gt;</h4><p>A push stores your local code on GitHub where it can be accessed by the rest of the team. To push your current branch, if it is already available on GitHub, is simpley <code>git push</code>. In order to add your local branch to GitHub a <code>git push -u origin &lt;branch name&gt;</code> is required</p>
+<p>Example Response:</p>
+<pre>
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 255 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/codeforgso/example.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+</pre>
+
+
+<h3>.gitignore Files</h3><p>Using an appropriate .gitignore file is critical.</p>
+<p>Code for Greensboro&#39; default .gitignore files are include in project baselines but may also be found on the  <a href="https://gist.github.com/codeforgso">Code for Greensboro Gists Page</a>.</p>
+<h3>Branches</h3><p>Code for Greensboro has a specific branching structure for developing, staging and shipping code.</p>
+<p>The primary primary branch for Development is the &#39;dev&#39; branch. This branch should only ever have working code and should be the primary branch that work is merged into.</p>
+<p>The &#39;dev&#39; branch as sub branches labeled to indicate purpose.</p>
+<ul>
+<li><strong>bug/branch-name</strong> : These branches are specifically for dealing with a collection of smaller bug, they may be ended with the day the work is being done or the type of work, ie. jan26, css-updates, js-errors.</li>
+<li><strong>issue/issue-number</strong> : Branches prepended with issue/ are for specific larger scale issues reported in Github.</li>
+<li><strong>feature/feature-name</strong> : These branches are used in primary production as well as for ongoing development of new features. There may be more than one of these branches to a feature as one may include backend or functional code while the other contains frontend.</li>
+<li><strong>styles/general</strong> : This branch and associated branches are for the creation and implementation of general purpose CSS/JS that are not directly associate with specific components.</li>
+</ul>
+<h3>Committing</h3><p>When working with GIT it is important to commit regularly and to include concise and descriptive commit messages. The goal of commit messages is to provide information about what the commit involved.</p>
+<p><a href="https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message">https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message</a></p>
+<ol>
+<li>First line should include less than 50 characters and act as a title.</li>
+<li>Never use the <code>-m</code> flag (It encourages abbreviated messages)</li>
+<li>Messages Should be in present tense (Fix bug vs Fixed Bug)</li>
+<li>Answer the Following:<ul>
+<li>Why is the change necessary?</li>
+<li>How does it address the issue?</li>
+<li>What side effects does this change have?</li>
+<li>If related to an issue provide a link to that issue</li>
+</ul>
+</li>
+</ol>
+<p>Example:</p>
+<pre><code>Clear Errors on Modal Close
+
+Clear JS errors when User closes login or Registraition modals.
+Change in behavior requested by client.
+Listen to .close class and empty() .js-errors &amp; removeClass(&#39;error&#39;) from .required
+
+Original Issue: https://github.com/Code for Greensboro/greenspon/issues/209
+
+# Please enter the commit message for your changes. Lines starting
+# with &#39;#&#39; will be ignored, and an empty message aborts the commit.
+# On branch bug/clear-errors
+# Your branch is ahead of &#39;origin/bug/clear-errors&#39; by 1 commit.
+#   (use &quot;git push&quot; to publish your local commits)
+#
+# Changes to be committed:
+#       modified:   example/file/path.less
+#
+</code></pre>
 
         </main>
       </div>
@@ -76,5 +172,8 @@
         </div>
       </div>
     </footer>
+    <script src="/standards/assets/js/nilla.js"></script>
+    <script src="/standards/assets/js/app.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
   </body>
 </html>

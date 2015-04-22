@@ -3,6 +3,6 @@
   "globals": {
     "site_title": "Cuberis Standards",
     "twitter": "@cuberis",
-    "base_url": ""
+    "base_url": "/standards"
   }
 }
