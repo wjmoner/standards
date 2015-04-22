@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuberis Standards</title>
+    <link rel="stylesheet" href="/standards/assets/css/app.css">
+  </head>
+  <body class="page-pages">
+    <header class="main-header">
+
+    </header>
+    <div class="container">
+      <div class="row">
+        <aside class="col-sm-4">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/deployment">Deployment</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/css">CSS</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/html">HTML</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/git">GIT</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/js">Javascript</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/tooling">Tooling</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/setup">Project Setup</a>
+            </li>
+          
+
+        </aside>
+        <main class="col-sm-8">
+          
+            
+  <a href="#js">JavaScript</a>
+
+
+          
+
+          
+            <h1>Javascript</h1>
+          
+
+          <h4>Indenting and spacing</h4><p>The preferred spacing style for Javascript is one tab set to two spaces.</p>
+<p>Some members like have spaces on the inside of parantheses, some don&#39;t. This practice (or lack thereof) should be neither frowned upon nor smiled at; but rather, looked at with a stern and stoic countenance befitting a team of adults who are capable of reading other people&#39;s code without splitting hairs.</p>
+<p>This is fine:</p>
+<pre><code>if(boolean)
+</code></pre><p>and this is also fine:</p>
+<pre><code>if( boolean )
+</code></pre><p>The important thing is that your code is readable, and if a space (or lack thereof) is stopping your code from being readable, you probably have larger problems.</p>
+<p>We&#39;re serious about the tab/spacing thing, though.</p>
+<h4>Variable declarations</h4><p>When possible, variables should be instantiated with one use of the &quot;var&quot; keyword. Declare all variables required for a given scope level at once. Removing unnecessary uses of the word &quot;var&quot; is better for performance.</p>
+<p>We&#39;ll define &quot;scope&quot; later, but just remember that not everything should be globally-accessible.</p>
+<h4>For Loops</h4><p>A for loop should be written such that its conditional statement is a variable, not the property of a variable. This is done to increase processing speed. This variable should be declared in the for loops initialization, to cut down on use of the &quot;var&quot; keyword. This is correct:</p>
+<pre><code>for( var i=0, x=array.length; i&lt;x; i++ ){
+  {...}
+}
+</code></pre><p>while these are not:</p>
+<pre><code>for( i=0; i&lt;array.length; i++ ){
+  {...}
+}
+
+var x = array.length;
+for( i=0; i&lt;x; i++ ){
+  {...}
+}
+</code></pre>
+
+        </main>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

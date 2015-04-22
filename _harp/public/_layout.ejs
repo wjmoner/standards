@@ -1,0 +1,74 @@
+<% var pages = public.pages._data;
+  var page = null;
+  for(var i = 0; i < pages.length; i++){
+    if(pages[i].slug == current.source){
+      page = pages[i];
+    }
+  }
+%>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuberis Standards</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|PT+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="<%= base_url %>/assets/css/app.css">
+  </head>
+  <body class="page-<%- current.path[0] %>">
+    <header class="main-header">
+
+    </header>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <aside class="col-sm-4 col left-col">
+          <nav class="bar-nav">
+            <h3 class="site-title">Standards &amp; Practices</h3>
+            <ul>
+              <li>
+                <a href="/standards/">Home</a>
+              </li>
+          <% var pages = public.pages._data;
+             for(var k = 0; k < pages.length; k++){ %>
+            <% if(current.source === pages[k].slug){ %>
+              <li class="active">
+                <a href="<%= base_url %>/pages/<%= pages[k].slug %>"><%= pages[k].title %></a>
+              </li>
+            <% } else { %>
+              <li>
+                <a href="<%= base_url %>/pages/<%= pages[k].slug %>"><%= pages[k].title %></a>
+              </li>
+            <% } %>
+          <% } %>
+            </ul>
+          </nav>
+        </aside>
+        <main class="col-sm-8 col-sm-offset-4 col right-col">
+          <% if(page && page.subnav){ %>
+            <%- partial('_partials/subnav', {subnav: page.subnav}) %>
+          <% } %>
+
+          <% if(page && page.title){ %>
+            <h1><%= page.title %></h1>
+          <% } %>
+
+          <%- yield %>
+
+        </main>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="<%= base_url %>/assets/js/nilla.js"></script>
+    <script src="<%= base_url %>/assets/js/app.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

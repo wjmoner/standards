@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Project Setup",
+    "slug": "setup",
+    "subnav": []
+  },
+  {
+    "title": "GIT and GitHub",
+    "slug": "git",
+    "subnav": []
+  },
+  {
+    "title": "CSS",
+    "slug": "css",
+    "subnav": []
+  },
+  {
+    "title": "Javascript",
+    "slug": "js",
+    "subnav": []
+  }
+]

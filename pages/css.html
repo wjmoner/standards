@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuberis Standards</title>
+    <link rel="stylesheet" href="/standards/assets/css/app.css">
+  </head>
+  <body class="page-pages">
+    <header class="main-header">
+
+    </header>
+    <div class="container">
+      <div class="row">
+        <aside class="col-sm-4">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/deployment">Deployment</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/css">CSS</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/html">HTML</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/git">GIT</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/js">Javascript</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/tooling">Tooling</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/setup">Project Setup</a>
+            </li>
+          
+
+        </aside>
+        <main class="col-sm-8">
+          
+            
+  <a href="#specificity">Specificity</a>
+
+
+          
+
+          
+            <h1>CSS</h1>
+          
+
+          <h4>app.less and what it means for <em>you</em></h4><p>Your app.less file should not contain any explicit attribute definitions. Rather, it should serve as a home for imported component files (e.g. buttons, lists, forms, etc) and merely assigned pre-designed library styles to explicitly-named application usages.</p>
+<p>Your LESS directory should be broken into three distinct parts: globals, components, and app.less itself. Globals should contain code written in the most abstract, reusable way possible and be written with language that denotes their visual appearance. Think of globals as your block level elements--buttons, forms, type, etc. Globals should be the only place where explicit CSS is written.</p>
+<p>Components should integrate globals as mixins, and be written with language that denotes their &quot;purpose&quot; on the page. Think of components as &quot;sections&quot; or &quot;parts&quot; of a website.</p>
+<p>App.less contains nothing but import statements that compile your components and globals.</p>
+<p>(Also I should at some point mention we use LESS, not SASS. Deal with it.)</p>
+<p>Here&#39;s an example of what a _globals file named _buttons.less might look like. Note that modifiers are as descriptive as possible. (Also note the parantheses with .btn, which prevents it from being output to the compiled CSS file. )</p>
+<pre><code>.btn() {
+    border-radius: 4px;
+    padding: 1em 2em;
+    background: @grey;
+
+    &amp;.green {
+        background: @green;
+    }
+    &amp;.red {
+        background: @red;
+    }
+    &amp;.square {
+        border-radius: 0;
+    }    
+    &amp;.extra-padding {
+        padding: 1.5em 3em;
+    }
+}
+</code></pre><p>This would then be used as a mixin within our _components files. Let&#39;s say we have a button associated with a person and a button associated with a product. The person button is green and square, the product button is red and has extra padding. This is our _person.less file:</p>
+<pre><code>.person .btn {
+    .btn.green.square();
+}
+</code></pre><p>and this is our \product.less file:</p>
+<pre><code>.product .btn {
+    .btn.red.extra-padding();
+}
+</code></pre><p>Our app.less file then looks something like this: </p>
+<pre><code>@import(&quot;globals/buttons.less&quot;);
+@import(&quot;components/person.less&quot;);
+@import(&quot;components/product.less&quot;);
+</code></pre><p>This system allows for an element&#39;s display characteristics to maintain a separation between <em>what</em> it is and <em>how</em> it looks on a page. This in turn allows for maximum reusability of code because form and function are distinct.</p>
+<h4>Nesting</h4><p>The only time that nested selectors should be used is with LESS&#39; &amp; operator. This is useful for making modifiers children of their more general counterparts, which keeps &quot;sibling&quot; styles grouped together for maximum legibility and order. This may also be useful for pseudoelements (i.e. :before and :after).</p>
+<h4>Hyphenation</h4><p>There shall be no instances of double-hyphenation in class names.</p>
+
+        </main>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

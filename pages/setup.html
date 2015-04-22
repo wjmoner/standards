@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuberis Standards</title>
+    <link rel="stylesheet" href="/standards/assets/css/app.css">
+  </head>
+  <body class="page-pages">
+    <header class="main-header">
+
+    </header>
+    <div class="container">
+      <div class="row">
+        <aside class="col-sm-4">
+          <h3>Table of Contents</h3>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/deployment">Deployment</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/css">CSS</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/html">HTML</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/git">GIT</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/js">Javascript</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/tooling">Tooling</a>
+            </li>
+          
+            <li>
+              <a href="/standards/pages/setup">Project Setup</a>
+            </li>
+          
+
+        </aside>
+        <main class="col-sm-8">
+          
+            
+  <a href="#Github">Adding to Github</a>
+
+
+          
+
+          
+            <h1>Project Setup</h1>
+          
+
+          <p>Any new or maintenance project gets a GitHub repo for code storage and management. If the client has both a production and maintenance server DeployHQ is set to use the Staging branch for the development server and the master branch for production. This provides a project with a consolidated and readable history and is part of our deployment process.</p>
+<p>To create a new repository a Development Team Member will log into Github and with in the Cuberis account create a new repository.</p>
+<p><img src="http://cuberis.github.io/standards/assets/img/add-new-repo.jpg" alt="Add a New Repo"></p>
+<p>Once the new repo is created the developer can make their initial commit.</p>
+<p>If creating a new project the initial commit should include baseline boilerplate files for the project which may include basic WP or Drupal files along with any other frameworks or plugins that are part of project baselines. This initial commit should take place before any additional CSS, JS or HTMl are added to the project.</p>
+<p>If the repo is for a maintenance account or a new support client the initial commit should include all files as they were initially provided, before any updates or changes are made.</p>
+<h3>.gitignore Files</h3><p>Using an appropriate .gitignore file is critical.</p>
+<p>Cuberis&#39; default .gitignore files are include in project baselines but may also be found on the  <a href="https://gist.github.com/cuberis">Cuberis Gists Page</a>.</p>
+<h3>Branches</h3><p>Cuberis has a specific branching structure for developing, staging and shipping code.</p>
+<h4>Development</h4><p>The primary primary branch for Development is the &#39;dev&#39; branch. This branch should only ever have working code and should be the primary branch that work is merged into.</p>
+<p>The &#39;dev&#39; branch as sub branches labeled to indicate purpose.</p>
+<ul>
+<li><strong>bug/branch-name</strong> : These branches are specifically for dealing with a collection of smaller bug, they may be ended with the day the work is being done or the type of work, ie. jan26, css-updates, js-errors.</li>
+<li><strong>issue/issue-number</strong> : Branches prepended with issue/ are for specific larger scale issues reported in Github.</li>
+<li><strong>feature/feature-name</strong> : These branches are used in primary production as well as for ongoing development of new features. There may be more than one of these branches to a feature as one may include backend or functional code while the other contains frontend.</li>
+<li><strong>styles/general</strong> : This branch and associated branches are for the creation and implementation of general purpose CSS/JS that are not directly associate with specific components.</li>
+</ul>
+<h4>Staging</h4><p>The &#39;staging&#39; branch does not have sub branches. This branch primary serves as a testing, and staging branch before anything is pushed to production. Code may sit in this branch until reaching an appropriate deployment branch when it is merged to master.</p>
+<h4>Production</h4><p>The &#39;master&#39; branch does not have sub branches. This branch should never be edited and is should be a direct representation/duplication of the code that is in production for any given project. As our deployments are triggered by any push to this branch it is critical that code be properly tested before being merged into master. Merges should only take place as a pull request from staging.</p>
+<h3>Deployments</h3><p>Code that is ready for deployment to Production is pushed to the Master branch of the project. That branch is then deployed to the appropriate production server, presently via <a href="https://cuberis.deployhq.com/">DeployHQ</a>.</p>
+<h4>Setting up a Project in DeployHQ</h4><p>After logging in at <a href="https://cuberis.deployhq.com">https://cuberis.deployhq.com</a>, in the right sidebar is a Create New Project Widget.</p>
+<p><img src="http://cuberis.github.io/standards/assets/img/create-new-project-deployhq.png" alt="New DeployHQ Project"></p>
+<p>This will take you to the following screen where you will name the project accordingly.</p>
+<p><img src="http://cuberis.github.io/standards/assets/img/name-your-project-deployhq.png" alt="Name Your Project"></p>
+<p>Under Repository Details, you can authenticate to Github and select the appropriate project</p>
+<p><img src="http://cuberis.github.io/standards/assets/img/repo-details-deployhq.png" alt="Repo Details"></p>
+
+        </main>
+      </div>
+    </div>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

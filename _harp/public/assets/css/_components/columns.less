@@ -1,0 +1,47 @@
+
+.col{
+  padding-top: 50px;
+  @media(min-width: @screen-sm){
+    padding-top: 100px;
+  }
+}
+
+.left-col{
+  height: auto;
+  padding-right: 0;
+  background: @brand-secondary;
+  background-size: 100%;
+  @media(min-width: @screen-sm){
+    position: fixed;
+    height: 100%;
+  }
+}
+
+.right-col{
+  ul,
+  ol{
+    margin-left: 40px;
+  }
+  @media(min-width: @screen-sm){
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: -30px;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p{
+      margin-left: 50px;
+      max-width: 800px;
+    }
+    ul,
+    ol{
+      margin-left: 90px;
+      max-width: 800px;
+    }
+
+  }
+}
